@@ -1,0 +1,13 @@
+.ignore
+.gitignore
+
+.vscode/
+.git/
+
+README.md
+Makefile
+Cargo.toml
+Cargo.lock
+rust-toolchain
+
+tests/

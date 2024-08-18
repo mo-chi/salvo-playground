@@ -1,0 +1,18 @@
+{
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true,
+        // 型とパラメータ名にインラインヒントの設定 (macOS Ctrl+Option で一時的に表示する)
+        "editor.inlayHints.enabled": "offUnlessPressed",
+    },
+    // --------------------------------------------------------------
+    // rust-analyzer フォーマッター設定
+    // --------------------------------------------------------------
+    "rust-analyzer.rustfmt.rangeFormatting.enable": true,
+    // --------------------------------------------------------------
+    // rust-analyzer リンター設定
+    // --------------------------------------------------------------
+    "rust-analyzer.checkOnSave": false,
+    "rust-analyzer.check.command": "clippy",
+    "editor.inlayHints.padding": true,
+}

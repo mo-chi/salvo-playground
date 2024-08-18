@@ -1,0 +1,31 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository Checkout
+        uses: actions/checkout@v4
+      - name: Rust version
+        run: rustc -V
+      - name: Check rustfmt
+        run: |
+          rustup component add rustfmt
+          cargo fmt --verbose --all --check
+      - name: Run Lint
+        run: |
+          rustup component add clippy
+          cargo clippy
+      - name: Run Build
+        run: cargo build --verbose
+      - name: Run tests
+        run: cargo test --verbose --all --all-features --no-fail-fast -- --nocapture
